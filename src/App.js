@@ -19,7 +19,7 @@ function App() {
             const [newItem , setNewItem] = useState('')
 
               const addItem = (element) =>{
-                const itemExists = items.some((elements) => (elements.message).toLowerCase() == (element.toLowerCase()))
+                const itemExists = items.some((elements) => (elements.message).toLowerCase() === (element.toLowerCase()))
                 
                 const id = items.length ? items[items.length -1].id + 1 : 1 ;
                 const addItems = {id , checked : false , message:element }
@@ -36,13 +36,13 @@ function App() {
 
   function handleCheck(id) {
     const listItems = items.map((elements) => 
-    elements.id == id ? {...elements , checked:!elements.checked} : elements)
+    elements.id === id ? {...elements , checked:!elements.checked} : elements)
     setItems(listItems)
     localStorage.setItem("to-do-list" , JSON.stringify(listItems))
   }
 
   function handleDelete(id){
-    const listItems = items.filter((elements) => elements.id!=id)
+    const listItems = items.filter((elements) => elements.id!==id)
     setItems(listItems)
     localStorage.setItem("to-do-list" , JSON.stringify(listItems))
   }
