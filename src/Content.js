@@ -6,7 +6,7 @@ const Content = ({items , handleCheck , handleDelete}) => {
 
   
   return (
-    <main>
+    <>
       {items.length ? (
         // ul items
         <Items 
@@ -17,7 +17,7 @@ const Content = ({items , handleCheck , handleDelete}) => {
         ):
         <p style={{color:'red' , marginTop: '2rem'}}>The list is Empty</p>
         }
-    </main>
+    </>
   )
 }
 
